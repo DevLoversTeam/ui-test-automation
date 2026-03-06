@@ -3,7 +3,10 @@ from pages.main.login_page import LoginPage
 
 
 def test_main_header_auth(page, settings, steps):
-    steps.check("Login via **/login", lambda: LoginPage(page).login(settings.LOGIN, settings.PASSWORD))
+    steps.check(
+        "Login via **/login",
+        lambda: LoginPage(page).login(settings.BASE_URL, settings.LOGIN, settings.PASSWORD)
+    )
 
     header = AuthHeader(page)
 
@@ -19,5 +22,4 @@ def test_main_header_auth(page, settings, steps):
     steps.visible('Check "Change language" button', header.change_language)
 
     # AuthHeader fields
-    steps.visible('Check "Dashboard" link', header.dashboard)
-    steps.visible('Check "Log out" button', header.logout)
+    steps.visible('Check "User menu" button', header.user_menu)

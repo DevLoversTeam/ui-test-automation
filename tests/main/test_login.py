@@ -19,6 +19,6 @@ def test_login(page, settings, steps):
     steps.check('Click "Log in" button', lambda: login_page.login_button.click())
 
     steps.check(
-        'Validate URL is "https://www.devlovers.net/en/dashboard"',
-        lambda: page.wait_for_url("https://www.devlovers.net/en/dashboard")
+        f'Validate URL is "{settings.BASE_URL}/dashboard"',
+        lambda: page.wait_for_url(f"{settings.BASE_URL}/dashboard")
     )
