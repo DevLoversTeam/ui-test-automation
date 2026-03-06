@@ -13,7 +13,7 @@ class MainHeader(BasePage):
 
     @property
     def quizzes(self):
-        return self.page.get_by_role("link", name="Quizzes")
+        return self.page.get_by_role("link", name="Quizzes", exact=True)
 
     @property
     def leaderboard(self):

@@ -3,8 +3,6 @@ from pages.base_page import BasePage
 
 class LoginPage(BasePage):
 
-    URL = "https://www.devlovers.net/en/login"
-
     @property
     def heading(self):
         return self.page.get_by_role("heading", name="Log in")
@@ -37,12 +35,12 @@ class LoginPage(BasePage):
     def signup_link(self):
         return self.page.get_by_role("link", name="Sign up")
 
-    def open(self):
-        super().open(self.URL).wait_ready()
+    def open(self, url: str):
+        super().open(url).wait_ready()
         return self
 
-    def login(self, email: str, password: str):
-        self.open()
+    def login(self, base_url: str, email: str, password: str):
+        self.open(f"{base_url.rstrip('/')}/login")
         self.email_input.fill(email)
         self.password_input.fill(password)
         self.login_button.click()
