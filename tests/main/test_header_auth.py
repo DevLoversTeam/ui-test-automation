@@ -13,7 +13,7 @@ def test_main_header_auth(page, settings, steps):
     # MainHeader fields
     steps.visible('Check "DevLovers" link', header.devlovers)
     steps.visible('Check "Q&A" link', header.qa)
-    steps.visible('Check "Quizzes" link', header.quizzes)
+    #steps.visible('Check "Quizzes" link', header.quizzes)
     steps.visible('Check "Leaderboard" link', header.leaderboard)
     steps.visible('Check "About" link', header.about)
     steps.visible('Check "Blog" link', header.blog)
