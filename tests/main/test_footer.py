@@ -20,3 +20,10 @@ def test_main_footer(page, settings, steps):
     steps.visible('Check "GitHub" link', footer.github_link)
     steps.visible('Check "LinkedIn" link', footer.linkedin_link)
     steps.visible('Check "Telegram" link', footer.telegram_link)
+
+
+def test_tgbot():
+    assert 1 == 0
+
+def test_tgbot2():
+    assert 2 == 1
